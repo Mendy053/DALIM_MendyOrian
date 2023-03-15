@@ -1,0 +1,23 @@
+.inline-block {
+    display: inline-block;
+}
+
+.block {
+    display: block;
+}
+
+.center {
+    text-align: center;
+}
+
+div.inline-block {
+    border: 1px navy solid;
+    width: 22%;
+    padding: 6vh;
+    margin: 2vh;
+    box-sizing: border-box;
+}
+
+button {
+    width: 50%;
+}

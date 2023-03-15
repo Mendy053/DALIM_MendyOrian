@@ -1,0 +1,27 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+div {
+    height: 20vh;
+    width: 30vw;
+    position: relative;
+    left: 20%;
+    top: 20%;
+}
+
+.a {
+    border: 3px red solid;
+    position: static;
+}
+
+.b {
+    background-color: aquamarine;
+}
+
+.c {
+    background-color: gold;
+
+}

@@ -1,0 +1,36 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    background-color: rgb(58, 58, 58);
+    height: fit-content;
+    color: rgb(210, 210, 210);
+    padding: 15px 30px;
+}
+
+li {
+    list-style: none;
+}
+
+nav {
+    width: 50%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.flex {
+    display: flex;
+}
+
+.jc-c {
+    justify-content: center;
+}
+
+.jc-sb {
+    justify-content: space-between;
+}

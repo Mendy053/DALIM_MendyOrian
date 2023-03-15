@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+
+body,
+html {
+    height: 100%;
+}
+
+#backgroundImg {
+    width: 60%;
+    height: 60%;
+    text-align: justify;
+    font-family: 'Amatic SC', cursive;
+    font-size: 14px;
+    background: white url(../Images/ex2.png) no-repeat center center;
+}
+
+#backgroundColor {
+    background-color: blue;
+}

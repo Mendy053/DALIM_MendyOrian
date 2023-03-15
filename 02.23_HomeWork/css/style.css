@@ -1,0 +1,176 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(255, 227, 175);
+}
+
+header {
+    background-color: rgb(58, 50, 35);
+    width: 100vw;
+    height: 10vh;
+}
+
+header > * {
+    height: 100%;
+}
+
+nav,
+ul {
+    width: 70%;
+}
+
+nav a {
+    font-size: 18px;
+}
+
+header > *:not(nav) {
+    width: 15%;
+}
+
+.logo {
+    left: 3vw;
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.container {
+    width: 3.5em;
+    height: 3.5em;
+}
+
+.circle {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 243, 222);
+    border-radius: 3.5em;
+}
+
+
+.user i {
+    font-size: 2em;
+    color: rgb(58, 50, 35);
+}
+
+.gear {
+    height: 100%;
+    width: 100%;
+}
+
+.gear i {
+    color: rgb(141 141 141);
+    top: 0;
+    right: 0;
+}
+
+main {
+    width: 100%;
+    padding-top: 6vh;
+}
+
+main div {
+    width: 80%;
+    text-align: center;
+}
+
+main span {
+    font-size: 100px;
+    color: rgb(58, 50, 35);
+
+}
+
+.gray-screen {
+    background-color: rgba(128, 128, 128, 0.783);
+    width: 100vw;
+    height: 100vh;
+    top: 0px;
+}
+
+.popup {
+    width: 40%;
+    height: 35%;
+    background-color: rgba(255, 255, 255, 0.716);
+    border-radius: 1rem;
+    border: 1px black solid;
+}
+
+.popup .icon {
+    font-size: 3rem;
+    padding-top: 4%;
+    width: 100%;
+}
+
+.popup * {
+    color: black;
+}
+
+.popup .icon-container,
+.q,
+.input,
+.buttons {
+    padding-top: 4%;
+    width: 100%;
+}
+
+.input input {
+    padding: 0.5% 4%;
+    line-height: 200%;
+    font-size: 1rem;
+}
+.buttons-in {
+    width: 100%;
+}
+
+.buttons {
+    bottom: 10px;
+}
+
+.buttons button {
+    width: 17vw;
+    height: 3rem;
+    font-size: large;
+    text-align: center;
+}
+
+.ok {
+    left: 5%;
+    bottom: 0px;
+    background-color: rgb(142, 203, 50);
+    border: 0;
+    border-radius:  0 0 0 1rem;
+}
+
+.cancel {
+    right: 5%;
+    bottom: 0px;
+    background-color: rgb(203, 65, 50);
+    border: 0;
+    border-radius:  0 0 1rem 0;
+}
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.flex {
+    display: flex;
+}
+
+.ai-c {
+    align-items: center;
+}
+
+.jc-c {
+    justify-content: center;
+}
+
+.jc-sa {
+    justify-content: space-around;
+}

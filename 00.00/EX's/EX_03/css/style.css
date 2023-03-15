@@ -1,0 +1,12 @@
+div > ul {
+    color: red;
+    font-weight: bold;
+}
+
+div > ul > li > ul > li {
+    color: green;
+}
+
+div > ul > li > ul > li > ul > li {
+    color: blue;
+}

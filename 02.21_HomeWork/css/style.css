@@ -1,0 +1,59 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.main-container > div {
+    display: flex;
+}
+
+.red-background {
+    background-color: red;
+}
+
+.green-background {
+    background-color: green;
+}
+
+.blue-background {
+    background-color: blue;
+}
+
+.purple-background {
+    background-color: purple;
+}
+
+.black-border {
+    border: 20px solid black;
+}
+
+.yellow-border {
+    border: 20px solid yellow;
+}
+
+.sb {
+    justify-content: space-between;
+}
+
+.sa {
+    justify-content: space-around;
+}
+
+.yellow-border .letter-box {
+    background-color: black;
+    color: white;
+}
+
+.black-border .letter-box {
+    background-color: white;
+    color: black;
+}
+
+.letter-box {
+    height: 100px;
+    width: 100px;
+    padding: 25px;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 40px;
+}

@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+
+html {
+    height: 100%;
+}
+
+body {
+    direction: rtl;
+    font-family: 'Amatic SC', cursive;
+    text-align: center;
+    background: white url(../Images/holiday.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+body * {
+    background-color: rgba(255, 255, 204, 0.3);
+    padding: 0 2%;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+p {
+    width: 50%;
+    font-size: 30px;
+
+}
