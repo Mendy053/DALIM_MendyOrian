@@ -67,41 +67,45 @@ html {
   
   #top ul li a {
     position: relative;
+    display: inline-block;
     color: white;
     text-decoration: none;
-    display: inline-block;
+  }
+  
+  #top ul li a::before {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transform-origin: left;
+    transition: width 0.3s ease-out;
+  }
+  
+  #top ul li a:hover::before {
+    width: 100%;
+    transition: width 0.3s ease-out;
   }
   
   #top ul li a::after {
     content: '';
-    display: block;
     position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 2px;
+    bottom: -3px;
+    right: 0;
     width: 0;
+    height: 2px;
     background-color: white;
-    transition: width 0.2s ease-in-out;
+    transform-origin: right;
+    transition: width 0.3s ease-out;
   }
   
   #top ul li a:hover::after {
     width: 100%;
+    transition: width 0.3s ease-out;
   }
-  /*  */
-  -webkit-text-size-adjust: 100%;
-  -webkit-font-smoothing: antialiased;
-  list-style-type: none;
-  text-decoration: none;
-  position: relative;
-  font: 14px/28px D-DIN-Bold,Arial,Verdana,sans-serif;
-  font-weight: 500;
-  font-style: normal;
-  color: #fff;
-  text-transform: uppercase;
-  display: block;
-  line-height: 1.4;
-  transition: opacity .6s linear;
-  /*  */
+  
 
 #logo img {
     width: 15vw;
