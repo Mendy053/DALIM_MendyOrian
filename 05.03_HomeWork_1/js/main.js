@@ -5,9 +5,10 @@ function orderLetters(userStr) {
     const VOWELS_LIST = ["a", "e", "i", "o", "u"];
     const VowelsInString = [];
     const ConsonantsInString = [];
+	userStr = userStr.replace(" ", "").toLowerCase();
 
     for (let i = 0; i < userStr.length; i++) {
-        let = letter = userStr[i].toLowerCase();
+        let = letter = userStr[i];
 
         if (VOWELS_LIST.includes(letter)) {
             VowelsInString.push(letter);
