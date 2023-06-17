@@ -1,0 +1,94 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+#cts-area {
+    height: 15vh;
+    width: 100vw;
+    background-color: rgb(181, 181, 155);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#cts-area h1 {
+    font-family: 'Press Start 2P', cursive;
+    color: rgb(216, 240, 236);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.448);
+}
+
+#cts-area h1:hover {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.448);
+}
+
+#cts-area h1:active {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.448);
+}
+
+#game-body {
+    display: flex;
+}
+
+#game-table {
+    height: 85vh;
+    width: 80vw;
+    background-color: rgb(183, 216, 216);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#details-bar {
+    height: 85vh;
+    width: 20vw;
+    background-color: cadetblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#black-area {
+    height: 90%;
+    width: 90%;
+    background-color: rgb(35, 33, 33);
+    border: solid 4px black;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
+}
+
+#cm {
+    cursor: pointer;
+    background-color: aliceblue;
+    position: relative;
+    display: inline-block;
+    border-radius: 20%;
+    border: 3px solid #ccc;
+    animation: spin 2s linear infinite;
+    user-select: none;
+    left: 0px;
+    top: 0px;
+}
+#details-bar > div {
+    width: 98%;
+    height:  98%;
+}
+
+.det-box {
+    height: 17%;
+    width: 90%;
+    margin: 1vh;
+    padding: 1vh;
+    background-color: beige;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
