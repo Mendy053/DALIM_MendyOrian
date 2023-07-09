@@ -29,7 +29,7 @@ const Elements = {
         text_notHover: "Catch Me If You Can!",
     },
     blackArea: {
-        element: document.querySelector("#black-area")
+        element: document.querySelector(".bad-click-area")
     }
 };
 
@@ -82,7 +82,6 @@ function goodClick() {
             Elements.blackArea.element.removeEventListener("click", badClick);
             Elements.spinner.element.style.display = "none";
             startConfetti();
-
         }
         else {
             // next level
@@ -164,6 +163,16 @@ function startTimer() {
     Elements.timer.interval = setInterval(() => {
         Elements.timer.value--;
         Elements.timer.element.innerText = Elements.timer.value;
+
+        if(!Elements.timer.value){
+            stopTimer();
+            Elements.spinner.element.removeEventListener("click", goodClick);
+            Elements.spinner.element.removeEventListener("mouseover", whenHover);
+            Elements.blackArea.element.removeEventListener("click", badClick);
+            Elements.spinner.element.style.display = "none";
+
+            alert("GAME OVER!\n" + `You have ${Elements.score.value} Score.`)
+        }
     }, 1000);
 }
 
