@@ -1,7 +1,17 @@
 import { Div, Span } from "../../Helpers/HTMLElements.js";
 
 export default class View {
-    createUsernameView() {
+    constructor() {
+        this.fourDigits = 0;
+        this.onPressFunction;
+    }
+
+    onButtonPress(onPressFunction) {
+        this.onPressFunction = onPressFunction;
+    }
+
+    renderPinButtons() {
+        const self = this;
 
         const NumbersContainer = new Div({
             className: "numbers-container",
@@ -11,10 +21,10 @@ export default class View {
             const PinDiv = new Div({
                 className: "pin-button",
                 onMousedown: function () {
-                    this.classList.add('pin-pressed', 'pin-press-animation');
+                    self.setPinButtonPressed(this);
                 },
                 onMouseup: function () {
-                    this.classList.remove('pin-pressed');
+                    self.finishPinButtonPressed(this);
                 },
             });
             PinDiv.append(
@@ -40,19 +50,35 @@ export default class View {
 
         $(document).ready(function () {
             $('main').empty().append(NumbersContainer).hide().fadeIn("slow");
-        }).on('keyup', keyupListener);
-    }
-}
+        }).on('keyup', this.keyupListener);
 
-var keyupListener = function (event) {
-    var key = event.key;
-    $('.pin-button').each(function () {
-        console.log(888)
-        if ($(this).text() === key) {
-            $(this).addClass('pin-pressed pin-press-animation');
-            setTimeout(() => {
-                $(this).removeClass('pin-pressed');
-            }, 200);
-        }
-    });
+    }
+
+    setPinButtonPressed(button) {
+        $(button).addClass('pin-pressed', 'pin-press-animation');
+    }
+
+    finishPinButtonPressed(button) {
+        $(button).removeClass('pin-pressed', 'pin-press-animation');
+        this.onPressFunction($(button).find(".pin-number").text());
+    };
+
+    stopTheKeyupListener() {
+        $(document).off('keyup', this.keyupListener);
+    }
+
+    keyupListener = (event) => {
+        const self = this;
+        var key = event.key;
+
+        $('.pin-button').each(function () {
+            if ($(this).find(".pin-number").text() === key) {
+                self.setPinButtonPressed(this);
+
+                setTimeout(() => {
+                    self.finishPinButtonPressed(this);
+                }, 100);
+            }
+        });
+    };
 };
