@@ -1,0 +1,46 @@
+# Node.js
+**/node_modules/
+npm-debug.log
+yarn-error.log
+
+# React
+/.eslintcache
+/.yarn-cache
+/build/
+/dist/
+
+# IDE/Editor specific
+.vscode/
+.idea/
+*.sublime-*
+*.swp
+*.swo
+
+# Compiled output
+*.log
+*.pot
+*.potx
+*.com.apple.*
+*.o
+*.pyc
+*.swp
+*.py[co]
+__pycache__/
+
+# Dependency directories
+bower_components/
+jspm_packages/
+
+# Testing
+/coverage/
+
+# Miscellaneous
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env*
+
+# Ignore all .env files except .env.example
+!.env.example
