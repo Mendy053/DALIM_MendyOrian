@@ -11,11 +11,11 @@ main {
     width: 100vw;
 }
 
-.numbers-container * {
+#container * {
     user-select: none;
 }
 
-.numbers-container {
+#container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -63,6 +63,11 @@ main {
 
 .pin-number {
     display: block;
+}
+
+#wrong-message{
+    color: red;
+    display: none;
 }
 
 .pin-chars {

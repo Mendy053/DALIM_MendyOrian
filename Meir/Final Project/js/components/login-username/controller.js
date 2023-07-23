@@ -1,21 +1,24 @@
+import Module from "./module.js";
 import View from "./view.js";
-import Model from "./model.js";
 
 export default class Controller {
     constructor() {
         this.view = new View();
-        this.model = new Model();
+        this.model = new Module();
     }
+
     init() {
-        this.view.renderPinButtons();
-        
-        this.view.onButtonPress((num) => {
-            this.model.addToPin(num);
-            if(this.model.isFourDigits()){
-                $("main").fadeOut("slow")
-                this.view.stopTheKeyupListener()
-            }
+        return new Promise((resolved) => {
+            this.view.renderComponent();
+            this.view.onSubmit((username) => {
+                this.model.setValidUsername(username)
+                    .then(() => {
+                        this.view.removeComponent();
+                        resolved(this.model.getUsername());
+                    }).catch(() => {
+                        this.view.setWrongMassage();
+                    });
+            });
         });
-        // stop listener keyupListener
     }
 }

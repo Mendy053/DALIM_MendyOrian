@@ -1,4 +1,4 @@
-export default class Model {
+export default class Module {
     constructor() {
         this.pin = "";
     }
@@ -7,8 +7,9 @@ export default class Model {
     }
 
     addToPin(num) {
-        this.pin += num;
-        console.log(this)
+        if (this.pin.length < 4) {
+            this.pin += num;
+        }
     }
 
     isFourDigits() {
