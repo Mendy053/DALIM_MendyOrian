@@ -6,8 +6,9 @@ export default class Controller {
         this.view = new View();
         this.module = new Module();
     }
-    init() {
-        return new Promise((resolved) => {
+
+    init(username) {
+        return new Promise((resolved, rejected) => {
 
             this.view.renderComponent();
 
@@ -15,7 +16,13 @@ export default class Controller {
                 this.module.addToPin(num);
                 if (this.module.isFourDigits()) {
                     this.view.removeComponent();
-                    resolved(this.module.getPin());
+
+                    // Check User
+                    this.module.checkTheUser(username).then((user) => {
+                        resolved(user);
+                    }).catch(() => {
+                        rejected(false);
+                    });
                 }
             });
         });

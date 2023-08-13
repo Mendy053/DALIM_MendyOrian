@@ -1,22 +1,23 @@
 import { Div } from "./Helpers/HTMLElements.js";
-import usernameComponent from "./components/login-username/controller.js";
-import pinComponent from "./components/login-pin/controller.js";
+import UsernameComponent from "./components/login-username/controller.js";
+import PinComponent from "./components/login-pin/controller.js";
+import Controller from "./components/dashboard/controller.js";
 
 (function init() {
-    let user = {};
+    const usernameComponent = new UsernameComponent();
+    const pinComponent = new PinComponent();
+    const dashboardComponent = new Controller();
 
-    $("main").append(new Div({ id: "container" }));
+    $("main").append(new Div({ className: "container" }));
 
-    new usernameComponent().init().then((username) => {
-        user.username = username;
-        new pinComponent().init().then((pin) => {
-            user.pin = pin;
-
-            checkUser(user);
+    usernameComponent.init().then(() => {
+        pinComponent.init(usernameComponent.model.getUsername()).then((user) => {
+            new Audio("./Assets/LoggedIn.mp3").play();
+            dashboardComponent.init();
+        }).catch(() => {
+            alert("You typed incorrect username or pin code!\nTry again..");
+            location.reload();
         });
     });
 
-    function checkUser(user) {
-        alert("checking..");
-    }
 })();

@@ -12,12 +12,13 @@ export default class View {
         this.usernameInput.append(
             new Label({
                 for: "username",
-                textContent: "Username"
+                textContent: "Username:"
             }),
             new Input({
+                type: "email",
                 name: "username",
                 id: "username",
-                placeholder: "Enter your username:",
+                placeholder: "Enter your username",
                 value: ""
             }),
             new Span({
@@ -27,34 +28,32 @@ export default class View {
 
         this.submit = new Button({
             id: "submit-button",
-            onClick: this.onSubmit
+            textContent: "Submit"
         });
 
         $(document).ready(function () {
-            $("#container").append(self.usernameInput, self.submit);
+            $(".container").append(self.usernameInput, self.submit);
         });
-
     }
 
     setWrongMassage() {
         $("#wrong-message")
-            .text("Please set some username!")
+            .text("Please enter some username!")
             .fadeIn(null, function () {
                 setTimeout(() => {
                     $(this).fadeOut();
                 }, 6000);
             });
     }
-    // view.js
+
     onSubmit = (submitFunction) => {
-        // Get the value of the username input field
-        const username = $(this.usernameInput).find("#username").val();
-        // Call the submitFunction with the username value
-        submitFunction(username); // Call the passed function with the username
+        $(this.submit).click(() => {
+            const username = $(this.usernameInput).find("#username").val();
+            submitFunction(username);
+        });
     };
 
-
     removeComponent() {
-        $("#container").children().fadeOut().empty();
+        $(".container").children().fadeOut().empty();
     }
 }

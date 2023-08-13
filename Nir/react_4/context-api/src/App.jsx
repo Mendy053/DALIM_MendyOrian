@@ -1,16 +1,20 @@
-import { useContext, useState } from 'react';
-import NewActionForm from './components/NewActionForm';
-import { Actions } from './contexts/Actions.js';
+import './App.css';
+import Balance from './Components/Balance';
+import ActionsList from './Components/List/ActionsList';
+import NewActionForm from './Components/NewActionForm';
+import { ActionsProvider } from './Contexts/Actions';
 
 function App() {
-  const [actions, setActions] = useState([]);
-
-
   return (
     <>
-      <Actions.Provider value={{ actions, setActions }}>
+      <ActionsProvider>
+        <Balance />
+        <hr />
         <NewActionForm />
-      </Actions.Provider>
+        <hr />
+        <hr />
+        <ActionsList />
+      </ActionsProvider>
     </>
   );
 }

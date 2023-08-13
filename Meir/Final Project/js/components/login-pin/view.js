@@ -45,16 +45,18 @@ export default class View {
 
 
         $(document).ready(function () {
-            self.Buttons.forEach((button) => {
-                $('#container').append(button).hide().fadeIn("slow");
-            });
+            for (let i = 0; i < 4; i++) {
+                const row = new Div({ className: "row" });
+                for (let j = 0; j < (i === 3 ? 1 : 3); j++) {
+                    row.append(self.Buttons[(i * 3) + j]);
+                }
+                $('.container').append(row).hide().fadeIn("slow");
+            }
         }).on('keyup', this.keyupListener);
 
     }
 
     setPinButtonPressed(button) {
-        console.log(button);
-        console.log("button clicked");
         $(button).addClass('pin-pressed pin-press-animation');
     }
 
@@ -68,8 +70,8 @@ export default class View {
         this.Buttons.forEach((button) => {
             $(button).children().off();
         });
-        $(this.Buttons).off()
-        $("#container").children().fadeOut().empty()
+        $(this.Buttons).off();
+        $(".container").fadeOut().empty();
     }
 
     keyupListener = (event) => {
