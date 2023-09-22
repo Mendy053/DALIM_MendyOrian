@@ -1,0 +1,61 @@
+* {
+    color: rgb(42, 32, 32);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+ul {
+    list-style: none;
+    text-decoration: none;
+    display: flex;
+}
+
+li {
+    margin: 0px 1rem;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+a.active {
+    color: red;
+}
+
+nav {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 3rem;
+    border-bottom: .1rem solid gray;
+}
+
+main {
+    margin-top: 4.2rem;
+}
+
+select,
+input,
+textarea,
+button {
+    vertical-align: top;
+    padding: .4rem;
+    display: block;
+    margin: 1rem;
+}
+
+input {
+    width: 25rem;
+}

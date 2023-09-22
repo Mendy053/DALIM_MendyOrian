@@ -1,0 +1,29 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+form {
+   display: flex;
+   flex-direction: column;
+   gap: 0.5rem;
+   width: 25vw;
+}
+
+a {
+   text-decoration: none;
+   color: white;
+}
+
+a.active {
+   color: rgb(243, 20, 124);
+}
+
+.dark_link {
+   color: black;
+}
+
+.url_list_container {
+   margin: 2rem;
+}

@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f5f5f5;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+input[type="email"],
+button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  width: 100%;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.popup button ,
+#submit-button {
+  background-color: #3498db;
+  color: white;
+  cursor: pointer;
+}
+
+.popup button:hover ,
+#submit-button:hover {
+  background-color: #2980b9;
+}
+
+#wrong-message {
+  color: #e74c3c;
+  font-size: 14px;
+  display: none;
+}
+
+.pin-buttons-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pin-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 3.4rem;
+  height: 3.2rem;
+  padding: .4rem;
+  background-color: #f2f2f2;
+  border: 1px solid #86aac2;
+  border-radius: .6rem;
+  cursor: pointer;
+  margin-right: .2rem;
+  margin-left: .2rem;
+}
+
+.pin-number {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.pin-chars {
+  font-size: .6rem;
+  color: #7a7a7a
+}
+
+/* Animation for pressed effect */
+.pin-pressed {
+  background-color: #ccc !important;
+  border-color: #999 !important;
+}
+
+.pin-press-animation {
+  animation: pressAnimation 0.1s linear;
+}
+
+@keyframes pressAnimation {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.95);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.my-row {
+  background-color: rgb(206, 235, 206);
+}
+
+.popup {
+  width: 50vw;
+  position: absolute;
+  top: 0px;
+  left: 25vw;
+}
+
+.popup .container {
+  background-color: #e9f9f1;
+  height: fit-content;
+}
+
+.edit-user,
+.delete-user {
+  cursor: pointer;
+  z-index: 100;
+}
+
+label,
+input {
+  display: block;
+  margin-bottom: 0px;
+  margin-top: .3rem;
+  font-size: medium;
+}
+
+.popup button {
+margin-top: 1rem;
+}
+
+.gray-space {
+  width: 100vw;
+  height: 100vh;
+  background-color: #27272784;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}

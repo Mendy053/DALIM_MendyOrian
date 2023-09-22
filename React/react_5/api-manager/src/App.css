@@ -1,0 +1,17 @@
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+li {
+  margin: 1rem;
+}
+
+input {
+  width: fit-content;
+}
+
+p {
+  background-color: black;
+  color: wheat;
+}

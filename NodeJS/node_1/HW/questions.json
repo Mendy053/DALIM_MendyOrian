@@ -1,0 +1,102 @@
+[
+    {
+        "question": "1+1 is?",
+        "answers": [
+            1,
+            2,
+            4,
+            8
+        ],
+        "correctAnswer": 2
+    },
+    {
+        "question": "What is the capital of France?",
+        "answers": [
+            "Berlin",
+            "Madrid",
+            "Paris",
+            "Rome"
+        ],
+        "correctAnswer": "Paris"
+    },
+    {
+        "question": "Which planet is known as the Red Planet?",
+        "answers": [
+            "Mars",
+            "Jupiter",
+            "Venus",
+            "Saturn"
+        ],
+        "correctAnswer": "Mars"
+    },
+    {
+        "question": "What is the largest mammal in the world?",
+        "answers": [
+            "Giraffe",
+            "Elephant",
+            "Whale Shark",
+            "Blue Whale"
+        ],
+        "correctAnswer": "Blue Whale"
+    },
+    {
+        "question": "What is the freezing point of water in Celsius?",
+        "answers": [
+            -10,
+            0,
+            10,
+            20
+        ],
+        "correctAnswer": 0
+    },
+    {
+        "question": "Who wrote the play 'Romeo and Juliet'?",
+        "answers": [
+            "Charles Dickens",
+            "William Shakespeare",
+            "Jane Austen",
+            "Mark Twain"
+        ],
+        "correctAnswer": "William Shakespeare"
+    },
+    {
+        "question": "What gas do plants absorb from the atmosphere?",
+        "answers": [
+            "Oxygen",
+            "Carbon Dioxide",
+            "Hydrogen",
+            "Nitrogen"
+        ],
+        "correctAnswer": "Carbon Dioxide"
+    },
+    {
+        "question": "What is the largest organ in the human body?",
+        "answers": [
+            "Brain",
+            "Heart",
+            "Liver",
+            "Skin"
+        ],
+        "correctAnswer": "Skin"
+    },
+    {
+        "question": "How many continents are there on Earth?",
+        "answers": [
+            5,
+            6,
+            7,
+            8
+        ],
+        "correctAnswer": 7
+    },
+    {
+        "question": "Which gas makes up the majority of Earth's atmosphere?",
+        "answers": [
+            "Oxygen",
+            "Carbon Dioxide",
+            "Nitrogen",
+            "Hydrogen"
+        ],
+        "correctAnswer": "Nitrogen"
+    }
+]
