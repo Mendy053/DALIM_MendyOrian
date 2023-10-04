@@ -1,6 +1,7 @@
-const Todo = () => {
+const Todo: React.FC  = () => {
     return (
         <>
+        
         </>
     );
 };

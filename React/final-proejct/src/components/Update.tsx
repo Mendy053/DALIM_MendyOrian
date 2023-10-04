@@ -1,4 +1,4 @@
-const Update = () => {
+const Update: React.FC  = () => {
     return (
         <>
         </>

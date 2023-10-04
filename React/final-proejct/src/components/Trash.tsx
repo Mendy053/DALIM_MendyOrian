@@ -1,4 +1,4 @@
-const Trash = () => {
+const Trash: React.FC  = () => {
     return (
         <>
         </>
