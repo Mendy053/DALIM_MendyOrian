@@ -1,8 +1,9 @@
-import { ADD_NEW_TODO, CHANGE_TODO_STATUS, DELETE_TODO } from "./Actions";
+import { ADD_NEW_TODO, CHANGE_TODO_STATUS, DELETE_TODO, EDIT_TODO } from "./Actions";
 export enum TodoStatus {
     new = "new",
     process = "process",
-    done = "done"
+    done = "done",
+    deleted = "deleted"
 }
 
 export interface TodoType {
@@ -18,7 +19,7 @@ export interface TodoType {
 export interface AddNewTodoActionType {
     type: typeof ADD_NEW_TODO,
     payload: {
-        newTodo: TodoType;
+        newTodo: TodoType
     };
 }
 
@@ -26,7 +27,7 @@ export interface ChangeTodoStatusType {
     type: typeof CHANGE_TODO_STATUS,
     payload: {
         id: number,
-        newStatus: TodoStatus;
+        newStatus: TodoStatus
     };
 }
 
@@ -35,6 +36,13 @@ export interface DeleteTodoType {
     payload: {
         id: number,
     };
+}
+
+export interface EditTodo {
+    type: typeof EDIT_TODO,
+    payload: {
+        todo: TodoType
+    }
 }
 
 export const addNewTodo = (newTodo: TodoType): AddNewTodoActionType => {
@@ -65,8 +73,18 @@ export const deleteTodo = (id: number): DeleteTodoType => {
     };
 };
 
+export const editTodo = (todo: TodoType): EditTodo => {
+    return {
+        type: EDIT_TODO,
+        payload: {
+            todo: todo
+        }
+    };
+};
+
 export default {
     addNewTodo: addNewTodo,
     changeTodoStatus: changeTodoStatus,
-    deleteTodo: deleteTodo
+    deleteTodo: deleteTodo,
+    editTodo: editTodo
 };
