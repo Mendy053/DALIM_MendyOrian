@@ -1,0 +1,1 @@
+export type EventType = "Period" | "H.T.";

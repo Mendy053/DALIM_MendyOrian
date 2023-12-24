@@ -1,0 +1,21 @@
+#actions-menu {
+  position: fixed;
+}
+
+body {
+  background-image: url('../assets/waterBackGround.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.calendar-row {
+  height: 1rem;
+  width: 100%;
+  background-color: black;
+  margin-bottom: 20px;
+}
