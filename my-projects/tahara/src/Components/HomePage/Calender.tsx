@@ -1,14 +1,14 @@
-import { Divider, IconButton, Paper, Stack } from "@mui/material";
+import { IconButton, Paper, Stack } from "@mui/material";
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import { GetAllThisMonthObjects, GetDateFormatForObject, GetHebMonthAndYear, GetHebrewMonth, GetWeekNumber } from "../../Helpers/Date/DateHelpers";
+import { GetAllThisMonthObjects, GetDateFormatForObject, GetHebDayObject, GetHebMonthAndYear, GetHebrewMonth, GetNextHebMonth, GetPreviousHebMonth, GetWeekNumber } from "../../Helpers/Date/DateHelpers";
 import { useEffect, useState } from "react";
 import { HebrewDateFullObjectType } from "../../Types and Interfaces/Dates";
 
 const PaperStyle: React.CSSProperties = {
     height: "fit-content",
     maxHeight: "fit-content",
-    width: "19rem",
+    width: "22rem",
     padding: ".6rem"
 };
 
@@ -23,11 +23,11 @@ const Calendar: React.FC = () => {
     const [allMonthObjects, setAllMonthObjects] = useState<HebrewDateFullObjectType[]>(GetAllThisMonthObjects(pickedDate));
 
     const GoToPreviousMonth = () => {
-        setPickedDate(new Date(pickedDate.setMonth(pickedDate.getMonth() - 1)));
+        setPickedDate(GetDateFormatForObject(GetPreviousHebMonth(pickedDate)));
     };
 
     const GoToNextMonth = () => {
-        setPickedDate(new Date(pickedDate.setMonth(pickedDate.getMonth() + 1)));
+        setPickedDate(GetDateFormatForObject(GetNextHebMonth(pickedDate)));
     };
 
     useEffect(() => {
@@ -67,8 +67,7 @@ const Calendar: React.FC = () => {
                     </div>
                     <div id="calendar-body">
                         <table>
-                            <tbody>
-
+                            <thead>
                                 <tr className="calendar-row days-in-week">
                                     <td className="calendar-day day-in-week">א</td>
                                     <td className="calendar-day day-in-week">ב</td>
@@ -78,8 +77,11 @@ const Calendar: React.FC = () => {
                                     <td className="calendar-day day-in-week">ו</td>
                                     <td className="calendar-day day-in-week">ז</td>
                                 </tr>
-                                <Divider sx={{ my: 0.5, mb: 1 }} />
-
+                                <tr id="calendar-divider">
+                                    <td colSpan={7}></td>
+                                </tr>
+                            </thead>
+                            <tbody>
                                 {
                                     HebDatesOrderedByWeeks().map((week, i, allArray) => {
                                         return (
@@ -89,7 +91,7 @@ const Calendar: React.FC = () => {
                                                 })}
 
                                                 {week.dateObjects.map((date) => {
-                                                    return <td key={GetDateFormatForObject(date).toDateString()} className="calendar-day"><IconButton size="small">{date.heDateParts.d}</IconButton></td>;
+                                                    return <td onClick={() => setPickedDate(GetDateFormatForObject(date))} key={GetDateFormatForObject(date).toDateString()} className={`calendar-day${date.hebrew === GetHebDayObject(pickedDate).hebrew && ' calendar-date-picked'}`}><IconButton size="small">{date.heDateParts.d}</IconButton></td>;
                                                 })}
 
                                                 {(i === allArray.length - 1) && Array.from({ length: 7 - week.dateObjects.length }, (_, i) => {

@@ -23,9 +23,20 @@ export function GetHebrewDate(date: Date): string {
     return GetHebDayObject(date).heDateParts.d;
 }
 
-export function GetPreviousMonth(date: Date): HebrewDateFullObjectType {
+export function GetPreviousHebMonth(date: Date): HebrewDateFullObjectType {
     const indexOf = allDates.indexOf(GetHebDayObject(date));
     for (let i = (indexOf - 27); i > (indexOf - 32); i--) {
+        if ((GetHebrewDate(date) === "ל׳" && (allDates[i].heDateParts.d == "ל׳" || allDates[i].heDateParts.d == "כ״ט"))
+            || GetHebrewDate(date) === allDates[i].heDateParts.d) {
+            return allDates[i];
+        }
+    }
+    return GetHebDayObject(date);
+}
+
+export function GetNextHebMonth(date: Date): HebrewDateFullObjectType {
+    const indexOf = allDates.indexOf(GetHebDayObject(date));
+    for (let i = (indexOf + 32); i > (indexOf + 27); i--) {
         if ((GetHebrewDate(date) === "ל׳" && (allDates[i].heDateParts.d == "ל׳" || allDates[i].heDateParts.d == "כ״ט"))
             || GetHebrewDate(date) === allDates[i].heDateParts.d) {
             return allDates[i];

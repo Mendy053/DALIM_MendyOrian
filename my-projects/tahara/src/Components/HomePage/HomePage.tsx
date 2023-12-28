@@ -6,9 +6,9 @@ import AddHTEvent from "./AddHTEvent";
 import Calendar from "./Calender";
 
 const PaperStyle: React.CSSProperties = {
-    marginTop: "4rem",
+    marginTop: "7.5vh",
     textAlign: 'center',
-    height: "80vh",
+    height: "85vh",
     backgroundColor: "#fffffff7",
     display: "flex",
     justifyContent: "center",
