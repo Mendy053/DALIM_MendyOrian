@@ -1,8 +1,7 @@
-import { Container, Paper, Stack, Typography } from "@mui/material";
+import { Container, Divider, Paper, Stack } from "@mui/material";
 import ActionsMenu from "./ActionsMenu";
 import { EventType } from "../../Types and Interfaces/Event";
-import AddPeriodEvent from "./AddPeriodEvent";
-import AddHTEvent from "./AddHTEvent";
+import AddEvent from "./AddEvent";
 import Calendar from "./Calender";
 
 const PaperStyle: React.CSSProperties = {
@@ -40,9 +39,10 @@ const HomePage: React.FC<HomePageComponentType> = ({ LastEvent }) => {
                 <Container>
                     <Paper variant="elevation" elevation={8} style={PaperStyle}>
                         <div style={PaperContentStyle}>
-                            <Typography variant="h3">הוספת אירוע חדש</Typography>
-                            <Calendar />
-                            {LastEvent === "H.T." ? <AddPeriodEvent /> : <AddHTEvent />}
+                            {/* <Typography letterSpacing={1.5} marginBottom={2} variant="h4">הוספת אירוע חדש</Typography> */}
+                            <Divider />
+                            <Calendar isOnaNeeded={LastEvent === "H.T."} />
+                            <AddEvent lastEvent={LastEvent}/>
                         </div>
                     </Paper>
                 </Container>

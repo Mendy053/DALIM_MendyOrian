@@ -21,7 +21,7 @@ function App() {
   return (
     <CacheProvider value={cacheRtl}>
       <ThemeProvider theme={Theme}>
-        <HomePage LastEvent="Period" />
+        <HomePage LastEvent="H.T." />
       </ThemeProvider>
     </CacheProvider>
   );

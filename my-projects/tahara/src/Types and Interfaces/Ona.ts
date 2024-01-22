@@ -1,0 +1,1 @@
+export type OnaType = "night" | "day"

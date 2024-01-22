@@ -1,6 +1,8 @@
 import { HebrewDateFullObjectType } from '../../Types and Interfaces/Dates';
 import HebDates from "./HebrewDates.json";
 
+export const HebWeekDays: string[] = ["ראשון", "שני", "שלישי", "רביעי", "חמישי", "שישי", "שבת"];
+
 const allDates: HebrewDateFullObjectType[] = Array.isArray(HebDates) ? HebDates : [];
 
 export function GetHebDayObject(date: Date = new Date()): HebrewDateFullObjectType {
@@ -9,6 +11,11 @@ export function GetHebDayObject(date: Date = new Date()): HebrewDateFullObjectTy
             return hebDate;
         }
     })[0];
+}
+
+export function GetPreviousHeDayInWeek(date: Date): string {
+    date.setDate(date.getDate() - 1);
+    return HebWeekDays[date.getDay()];
 }
 
 export function GetHebrewMonth(date: Date): string {

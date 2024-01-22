@@ -4,6 +4,9 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import { GetAllThisMonthObjects, GetDateFormatForObject, GetHebDayObject, GetHebMonthAndYear, GetHebrewMonth, GetNextHebMonth, GetPreviousHebMonth, GetWeekNumber } from "../../Helpers/Date/DateHelpers";
 import { useEffect, useState } from "react";
 import { HebrewDateFullObjectType } from "../../Types and Interfaces/Dates";
+import { OnaType } from "../../Types and Interfaces/Ona";
+import Brightness3Icon from '@mui/icons-material/Brightness3';
+import WbSunnyIcon from '@mui/icons-material/WbSunny';
 
 const PaperStyle: React.CSSProperties = {
     height: "fit-content",
@@ -18,9 +21,14 @@ const CalendarHeaderStyle: React.CSSProperties = {
     alignItems: "center"
 };
 
-const Calendar: React.FC = () => {
+interface CalendarProps {
+    isOnaNeeded: boolean;
+}
+
+const Calendar: React.FC<CalendarProps> = ({ isOnaNeeded = true }) => {
     const [pickedDate, setPickedDate] = useState<Date>(new Date());
     const [allMonthObjects, setAllMonthObjects] = useState<HebrewDateFullObjectType[]>(GetAllThisMonthObjects(pickedDate));
+    const [ona, setOna] = useState<OnaType>("night");
 
     const GoToPreviousMonth = () => {
         setPickedDate(GetDateFormatForObject(GetPreviousHebMonth(pickedDate)));
@@ -91,7 +99,7 @@ const Calendar: React.FC = () => {
                                                 })}
 
                                                 {week.dateObjects.map((date) => {
-                                                    return <td onClick={() => setPickedDate(GetDateFormatForObject(date))} key={GetDateFormatForObject(date).toDateString()} className={`calendar-day${date.hebrew === GetHebDayObject(pickedDate).hebrew && ' calendar-date-picked'}`}><IconButton size="small">{date.heDateParts.d}</IconButton></td>;
+                                                    return <td onClick={() => setPickedDate(GetDateFormatForObject(date))} key={GetDateFormatForObject(date).toDateString()} className={`calendar-day${date.hebrew === GetHebDayObject(pickedDate).hebrew && ' calendar-date-picked'}`}><IconButton className={`${!isOnaNeeded || GetHebDayObject(pickedDate).hebrew !== date.hebrew ? "" : ona === "day" ? " ona-left" : " ona-right"}`} size="small">{date.heDateParts.d.replaceAll("״", "").replaceAll("׳", "")}</IconButton></td>;
                                                 })}
 
                                                 {(i === allArray.length - 1) && Array.from({ length: 7 - week.dateObjects.length }, (_, i) => {
@@ -104,9 +112,18 @@ const Calendar: React.FC = () => {
                             </tbody>
 
                         </table>
+                        {
+                            isOnaNeeded &&
+                            <div>
+                                <IconButton onClick={() => setOna(ona === "day" ? "night" : "day")} id="ona-button" style={{ width: "3rem", height: "3rem", backgroundColor: ona === "day" ? "white" : "gray" }}>{ona === "night" ? <Brightness3Icon /> : <WbSunnyIcon />}</IconButton>
+                            </div>
+                        }
                     </div>
                 </Paper>
             </Stack>
+            <div>
+
+            </div>
         </>
     );
 };

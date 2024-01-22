@@ -26,7 +26,8 @@ body {
   height: 2.3rem;
 }
 
-.calendar-date-picked button {
+.calendar-date-picked button,
+#ona-button {
   background-color: rgb(236, 236, 236);
   box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
 }
@@ -65,4 +66,12 @@ body {
 
 thead td {
   height: max-content;
+}
+
+.ona-left {
+  background: linear-gradient(to right, rgb(180, 196, 237) 50%, rgb(236, 236, 236) 50%);
+}
+
+.ona-right {
+  background: linear-gradient(to right, rgb(236, 236, 236) 50%, rgb(180, 196, 237) 50%);
 }

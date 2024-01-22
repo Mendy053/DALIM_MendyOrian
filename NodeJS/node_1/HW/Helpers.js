@@ -1,10 +1,9 @@
-const readline = require("readline");
 const { readFile, writeFile } = require("fs");
 
+const { interface} = require("./main")
 
 function askQuestion(question, timeout = null) {
     return new Promise((resolved, rejected) => {
-        const interface = readline.createInterface({ input: process.stdin, output: process.stdout });
 
         if (timeout != null) {
             setTimeout(() => {
@@ -15,7 +14,7 @@ function askQuestion(question, timeout = null) {
         interface.question(`${question} `, (result, error) => {
             if (error) { rejected(error); }
             else { resolved(result); }
-            interface.close();
+            // interface.close();            
         });
     });
 }
