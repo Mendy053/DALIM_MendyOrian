@@ -1,0 +1,13 @@
+<h1>Login page</h1>
+
+<form action="/auth/login" method="post">
+   <input type="text" name="username" />
+
+   <input type="password" name="password" />
+
+   <% if(errorMessage) { %>
+   <div class="error_message"><%= errorMessage %></div>
+   <% } %>
+
+   <button>Login</button>
+</form>

@@ -78,9 +78,20 @@ app.get("/profile", async (_request, _response) => {
          message: "You are not allowed visit this page",
       });
    } catch (e) {
-      throw new Error(e);
+
+      _response.status(500).json({
+
+      })
+    
    }
 });
+
+
+function validateEmail(email){
+
+}
+
+function stringValidate(){}
 
 app.post("/register", async (_request, _response) => {
    try {

@@ -1,0 +1,9 @@
+<h1>Profile page</h1>
+
+<h2><%= username %></h2>
+
+<% for(const post of posts ) { %> <%- include('../partials/card.ejs', { post:post }) %> <% } %>
+
+<script>
+   console.log("Profile page");
+</script>
